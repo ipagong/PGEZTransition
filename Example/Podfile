@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'PGEZTransition_Example' do
+  pod 'PGEZTransition', :path => '../'
+
+  target 'PGEZTransition_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

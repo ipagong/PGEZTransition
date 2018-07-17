@@ -1,0 +1,6 @@
+framework module PGEZTransition {
+  umbrella header "PGEZTransition-umbrella.h"
+
+  export *
+  module * { export * }
+}

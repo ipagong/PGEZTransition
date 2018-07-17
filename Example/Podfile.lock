@@ -1,0 +1,16 @@
+PODS:
+  - PGEZTransition (0.1.0)
+
+DEPENDENCIES:
+  - PGEZTransition (from `../`)
+
+EXTERNAL SOURCES:
+  PGEZTransition:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  PGEZTransition: 5c9c8737b249b7e3843e96a7d2db6e2b31d7929c
+
+PODFILE CHECKSUM: 99f61ea5786e9ff27bcb103431d5369b028a3284
+
+COCOAPODS: 1.5.0
