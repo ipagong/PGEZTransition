@@ -31,7 +31,7 @@ pod 'PGEZTransition'
 
 # Demo  
 
-appetize.io demo : [\[ here \]](http://daum.net) 
+appetize.io demo : [\[ here \]](https://appetize.io/app/mq2yv6204y32pfjj8eqca2zpa8?device=iphone6s&scale=75&orientation=portrait&osVersion=11.4) 
 
 ## Author
 
