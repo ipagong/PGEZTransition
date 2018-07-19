@@ -46,6 +46,14 @@ class IntroSecondController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
+    
+    @IBAction func onNext(_ sender: Any) {
+        self.transition.presentTransformViewController()
+    }
+    
+    @IBAction func onBack(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
 }
 
 

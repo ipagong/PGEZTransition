@@ -36,7 +36,10 @@ class IntroFirstController: UIViewController {
         super.viewDidLoad()
         self.transitionSetup()
     }
-
+    
+    @IBAction func onNext(_ sender: Any) {
+        self.transition.presentTransformViewController()
+    }
 }
 
 extension IntroFirstController {

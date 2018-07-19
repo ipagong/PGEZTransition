@@ -27,9 +27,23 @@ class IntroThirdController: UIViewController {
     @IBOutlet weak var jumpButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
     
+    lazy var alert:UIAlertController = { 
+        let alert = UIAlertController.init(title: nil, message: "Thanks to try it", preferredStyle: .alert)
+        alert.addAction(UIAlertAction.init(title: "OK", style: .default, handler: nil))
+        return alert
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.transitionSetup()
+    }
+    
+    @IBAction func onNext(_ sender: Any) {
+        self.present(self.alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func onBack(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
 }
 

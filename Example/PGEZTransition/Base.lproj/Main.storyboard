@@ -41,23 +41,14 @@
                                         <state key="normal" title="next">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GTZ-90-TzM">
-                                        <rect key="frame" x="20" y="0.0" width="34" height="66"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="66" id="RzH-Eo-XQr"/>
-                                        </constraints>
-                                        <state key="normal" title="back">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
+                                        <connections>
+                                            <action selector="onNext:" destination="cFm-Td-68p" eventType="touchUpInside" id="OiY-gf-nVT"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="GTZ-90-TzM" firstAttribute="leading" secondItem="29C-Qu-WaI" secondAttribute="leading" constant="20" id="ODd-fd-vb3"/>
-                                    <constraint firstAttribute="bottom" secondItem="GTZ-90-TzM" secondAttribute="bottom" id="Prc-jI-Q8h"/>
                                     <constraint firstAttribute="trailing" secondItem="nlU-5q-ofl" secondAttribute="trailing" constant="20" id="bbN-r7-YZd"/>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="GTZ-90-TzM" secondAttribute="trailing" constant="20" symbolic="YES" id="eEE-IY-xUi"/>
                                     <constraint firstAttribute="height" constant="66" id="ecJ-qD-WFp"/>
                                     <constraint firstItem="nlU-5q-ofl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="29C-Qu-WaI" secondAttribute="leading" constant="20" symbolic="YES" id="ha3-Yn-DgE"/>
                                     <constraint firstAttribute="bottom" secondItem="nlU-5q-ofl" secondAttribute="bottom" id="ho7-Qo-gZw"/>
@@ -101,7 +92,6 @@
                         <outlet property="image2" destination="uXn-pF-6mX" id="51M-G9-m0f"/>
                         <outlet property="image3" destination="ucn-8k-AOs" id="3Qa-1o-fAf"/>
                         <outlet property="image4" destination="iJ8-Da-F88" id="0jf-Ay-7dm"/>
-                        <outlet property="jumpButton" destination="GTZ-90-TzM" id="djC-aV-Fq6"/>
                         <outlet property="menuView" destination="29C-Qu-WaI" id="p8T-lI-9Dp"/>
                         <outlet property="nextButton" destination="nlU-5q-ofl" id="v1l-QI-NzV"/>
                         <outlet property="title1" destination="E6t-mx-Z2R" id="S8m-3u-FGd"/>
@@ -144,6 +134,9 @@
                                         <state key="normal" title="next">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onNext:" destination="DQy-Ko-kZc" eventType="touchUpInside" id="rZt-Ze-37X"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J8N-eI-M2d">
                                         <rect key="frame" x="20" y="0.0" width="34" height="66"/>
@@ -153,6 +146,9 @@
                                         <state key="normal" title="back">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onBack:" destination="DQy-Ko-kZc" eventType="touchUpInside" id="S49-Zq-Ctz"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -254,6 +250,9 @@
                                             <constraint firstAttribute="height" constant="66" id="x68-vW-Epm"/>
                                         </constraints>
                                         <state key="normal" title="start"/>
+                                        <connections>
+                                            <action selector="onNext:" destination="T75-lV-hkD" eventType="touchUpInside" id="YU9-jL-KGL"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bbH-E5-S5k">
                                         <rect key="frame" x="20" y="0.0" width="34" height="66"/>
@@ -263,6 +262,9 @@
                                         <state key="normal" title="back">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onBack:" destination="T75-lV-hkD" eventType="touchUpInside" id="7IV-Su-JjR"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -288,8 +290,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PGTransformal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CRa-fk-ohe" customClass="PGTransformLabel" customModule="PGEZTransition">
-                                <rect key="frame" x="77.5" y="131.5" width="165" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PGTransformable" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CRa-fk-ohe" customClass="PGTransformLabel" customModule="PGEZTransition">
+                                <rect key="frame" x="63.5" y="131.5" width="193" height="30"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
