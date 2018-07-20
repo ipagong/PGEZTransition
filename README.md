@@ -31,6 +31,10 @@ pod 'PGEZTransition'
 
 # Demo  
 
+<p align="center">
+<img src="readme-resources/pgeztransition.gif" style="max-height: 320px;" alt="PGEZTransition Preview">
+</p>
+
 appetize.io demo : [\[ here \]](https://appetize.io/app/mq2yv6204y32pfjj8eqca2zpa8?device=iphone6s&scale=75&orientation=portrait&osVersion=11.4) 
 
 ## Author
