@@ -29,6 +29,65 @@ To install it, simply add the following line to your Podfile:
 pod 'PGEZTransition'
 ```
 
+## How to Use
+
+1. Setup views on interfacebuild (or programatically)
+
+<p align="left">
+<img src="readme-resources/step1.png" style="max-height: 320px;" alt="ViewSetup">
+</p>
+
+2. Setup custom class at "inspector"  (if you use UILabel, use PGTransformLabel)
+
+<p align="left">
+<img src="readme-resources/step2.png" style="max-height: 320px;" alt="ViewSetup">
+</p>
+
+3. Setup transform value & alpha
+
+```swift
+class IntroSecondController: UIViewController {
+    
+    //connect IBOutlet
+    @IBOutlet weak var titleTop: PGTransformLabel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    
+        // Setup view transform.
+        titleTop
+            .setStartTransform(.y(15), start: 0.3, duration: 0.4)
+            .setStartAlpha(0.0, start: 0.2, duration: 0.4)
+            .setEndTransform(.zero, start: 0.0, duration: 1.0)
+            .setEndAlpha(1.0, start: 0.0, duration: 1.0)
+            
+        ...
+    }
+}
+```
+
+4. Connect Each ViewController ( target vc < - > will present vc )
+
+```swift
+
+class IntroFirstController: UIViewController {
+    //Animator
+    private var transition:PGTransformTransition!
+    
+    //next view controller 
+    private lazy var nextVc:IntroSecondController = {
+        return UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "IntroSecondController") as! IntroSecondController
+    } ()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        //setup
+        self.transition = PGTransformTransition(target: self, presenting: self.nextVc)
+    }
+}
+```
+
 # Demo  
 
 <p align="center">
