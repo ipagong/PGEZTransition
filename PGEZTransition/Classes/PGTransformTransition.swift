@@ -16,46 +16,46 @@ public typealias PGTransformChecked   = (PGTransformTransition) -> (Bool)
 open class PGTransformTransition: UIPercentDrivenInteractiveTransition,
 UIViewControllerAnimatedTransitioning, UIViewControllerTransitioningDelegate {
     
-    public var presentBlock:PGTransformCompleted?
-    public var dismissBlock:PGTransformCompleted?
+    public var showBlock:PGTransformCompleted?
+    public var hideBlock:PGTransformCompleted?
     
-    public var canPresentBlock:PGTransformChecked?
-    public var canDismissBlock:PGTransformChecked?
+    public var canShowBlock:PGTransformChecked?
+    public var canHideBlock:PGTransformChecked?
     
-    public var canPresent:Bool { return self.canPresentBlock?(self) ?? true }
-    public var canDismiss:Bool { return self.canDismissBlock?(self) ?? true }
+    public var canShow:Bool { return self.canShowBlock?(self) ?? true }
+    public var canHide:Bool { return self.canHideBlock?(self) ?? true }
     
-    public var enablePresent:Bool = true
-    public var enableDismiss:Bool = true
+    public var enableShow:Bool = true
+    public var enableHide:Bool = true
     
-    public var presentDuration:TimeInterval = 0.5
-    public var dismissDuration:TimeInterval = 0.5
+    public var showDuration:TimeInterval = 0.5
+    public var hideDuration:TimeInterval = 0.5
     
     public weak var target:UIViewController?
-    public weak var presenting:UIViewController? {
+    public weak var showing:UIViewController? {
         willSet {
-            guard self.isPresented == false else { return }
-            guard self.presenting?.view.gestureRecognizers?.contains(self.dismissGesture) == true else { return }
-            self.presenting?.view.removeGestureRecognizer(self.dismissGesture)
+            guard self.isShowed == false else { return }
+            guard self.showing?.view.gestureRecognizers?.contains(self.hideGesture) == true else { return }
+            self.showing?.view.removeGestureRecognizer(self.hideGesture)
         }
         
         didSet {
-            guard self.isPresented == false else {
-                self.presenting = oldValue
+            guard self.isShowed == false else {
+                self.showing = oldValue
                 return
             }
-            self.presenting?.view.addGestureRecognizer(self.dismissGesture)
+            self.showing?.view.addGestureRecognizer(self.hideGesture)
         }
     }
     
-    private weak var current:UIViewController?
+    public weak var current:UIViewController?
     
-    private var isPresented:Bool { return current != target }
+    public var isShowed:Bool { return current != target }
     
-    private var hasInteraction:Bool = false
-    private var didActionStart:Bool = false
-    private var beganPanPoint:CGPoint = .zero
-    private var maxDistance:CGFloat { return (self.target?.view.bounds.width ?? 320.0) / 2 }
+    public var hasInteraction:Bool = false
+    public var didActionStart:Bool = false
+    public var beganPanPoint:CGPoint = .zero
+    public var maxDistance:CGFloat { return (self.target?.view.bounds.width ?? 320.0) / 2 }
 
     @objc
     override init() { super.init() }
@@ -67,45 +67,49 @@ UIViewControllerAnimatedTransitioning, UIViewControllerTransitioningDelegate {
         self.target  = target
         self.current = target
         
-        target.view.addGestureRecognizer(self.presentGesture)
+        target.view.addGestureRecognizer(self.showGesture)
+        
+        transitionInitalized()
     }
     
     @objc
-    public init(target:UIViewController, presenting:UIViewController) {
+    public init(target:UIViewController, showing:UIViewController) {
         super.init()
         
         self.target = target
-        target.view.addGestureRecognizer(self.presentGesture)
+        target.view.addGestureRecognizer(self.showGesture)
         
-        self.presenting = presenting
-        presenting.view.setNeedsLayout()
-        presenting.view.addGestureRecognizer(self.dismissGesture)
+        self.showing = showing
+        showing.view.setNeedsLayout()
+        showing.view.addGestureRecognizer(self.hideGesture)
         
         self.current = target
+        
+        transitionInitalized()
     }
-    
-    lazy public var presentGesture:UIPanGestureRecognizer = {
-        let gesture = UIPanGestureRecognizer(target: self, action: #selector(onPresentWith(gesture:)))
+
+    lazy public var showGesture:UIPanGestureRecognizer = {
+        let gesture = UIPanGestureRecognizer(target: self, action: #selector(onShowWith(gesture:)))
         gesture.delegate = self
         return gesture
     }()
     
-    lazy public var dismissGesture:UIPanGestureRecognizer = {
-        let gesture = UIPanGestureRecognizer(target: self, action: #selector(onDismissWith(gesture:)))
+    lazy public var hideGesture:UIPanGestureRecognizer = {
+        let gesture = UIPanGestureRecognizer(target: self, action: #selector(onHideWith(gesture:)))
         gesture.delegate = self
         return gesture
     }()
     
     deinit {
-        self.target     = nil
-        self.presenting = nil
+        self.target  = nil
+        self.showing = nil
     }
     
-    @objc public func onPresentWith(gesture:UIPanGestureRecognizer) {
-        guard let _ = self.presenting else { return }
-        guard canPresent    == true   else { return }
-        guard enablePresent == true   else { return }
-        guard isPresented   == false  else { return }
+    @objc public func onShowWith(gesture:UIPanGestureRecognizer) {
+        guard let _ = self.showing else { return }
+        guard canShow    == true   else { return }
+        guard enableShow == true   else { return }
+        guard isShowed   == false  else { return }
         
         guard let window = target?.view.window else { return }
         
@@ -124,7 +128,7 @@ UIViewControllerAnimatedTransitioning, UIViewControllerTransitioningDelegate {
             PGLogger.debug("[PRESENT PERCENTAGE] \(percentage)")
             
             if percentage > 0 {
-                self.presentOpenAction()
+                self.showOpenAction()
                 self.update(percentage)
             } else {
                 self.cancel()
@@ -148,13 +152,13 @@ UIViewControllerAnimatedTransitioning, UIViewControllerTransitioningDelegate {
         }
     }
     
-    @objc public func onDismissWith(gesture:UIPanGestureRecognizer) {
-        guard let _ = presenting    else { return }
-        guard canDismiss    == true else { return }
-        guard enableDismiss == true else { return }
-        guard isPresented   == true else { return }
+    @objc public func onHideWith(gesture:UIPanGestureRecognizer) {
+        guard let _ = showing    else { return }
+        guard canHide    == true else { return }
+        guard enableHide == true else { return }
+        guard isShowed   == true else { return }
         
-        guard let window = presenting?.view.window else { return }
+        guard let window = showing?.view.window else { return }
         
         let location = gesture.location(in: window)
         let velocity = gesture.velocity(in: window)
@@ -174,7 +178,7 @@ UIViewControllerAnimatedTransitioning, UIViewControllerTransitioningDelegate {
             PGLogger.debug("[DISMISS PERCENTAGE] \(percentage)")
             
             if percentage > 0 {
-                self.dismissAction()
+                self.hideAction()
                 self.update(percentage)
             } else {
                 self.cancel()
@@ -201,7 +205,7 @@ UIViewControllerAnimatedTransitioning, UIViewControllerTransitioningDelegate {
         }
     }
     
-    private func presentAnimation(from:UIViewController, to:UIViewController, container:UIView, context: UIViewControllerContextTransitioning) {
+    private func showAnimation(from:UIViewController, to:UIViewController, container:UIView, context: UIViewControllerContextTransitioning) {
         let fromViewBackgroundColor = from.view.backgroundColor
         from.view.backgroundColor = .clear
         
@@ -217,13 +221,13 @@ UIViewControllerAnimatedTransitioning, UIViewControllerTransitioningDelegate {
         fromViews.forEach { view in
             view.alpha     = 1.0
             view.transform = CGAffineTransform.identity
-            PGLogger.debug("[Present Initialize] fromView transform : \(view.endTransform), alpha \(view.endAlpha)")
+            PGLogger.debug("[Show Initialize] fromView transform : \(view.endTransform), alpha \(view.endAlpha)")
         }
         
         toViews.forEach { view in
             view.alpha     = view.startAlpha.value
             view.transform = view.startTransform.value
-            PGLogger.debug("[Present Initialize] toView transform : \(view.startTransform), alpha \(view.startAlpha)")
+            PGLogger.debug("[Show Initialize] toView transform : \(view.startTransform), alpha \(view.startAlpha)")
         }
         
         from.viewWillDisappear(true)
@@ -238,7 +242,7 @@ UIViewControllerAnimatedTransitioning, UIViewControllerTransitioningDelegate {
                 UIView.addKeyframe(withRelativeStartTime: view.endTransform.relatedStart, relativeDuration: view.endTransform.relatedDuration, animations: {
                     view.transform = view.endTransform.value
                 })
-                PGLogger.debug("[Present AnimateKeyFrame] fromView transform : \(view.endTransform), alpha \(view.endAlpha)")
+                PGLogger.debug("[Show AnimateKeyFrame] fromView transform : \(view.endTransform), alpha \(view.endAlpha)")
             }
             
             toViews.forEach { view in
@@ -249,40 +253,40 @@ UIViewControllerAnimatedTransitioning, UIViewControllerTransitioningDelegate {
                 UIView.addKeyframe(withRelativeStartTime: view.startTransform.relatedStart, relativeDuration: view.startTransform.relatedDuration, animations: {
                     view.transform = CGAffineTransform.identity
                 })
-                PGLogger.debug("[Present AnimateKeyFrame] toViews transform : \(view.startTransform), alpha \(view.startAlpha)")
+                PGLogger.debug("[Show AnimateKeyFrame] toViews transform : \(view.startTransform), alpha \(view.startAlpha)")
             }
             
             }, completion: { [unowned self] (_) in
                 
                 let canceled = context.transitionWasCancelled
                 if canceled == true {
-                    self.current = self.target
+                    self.current = from
                     context.completeTransition(false)
                 } else {
-                    self.current = self.presenting
+                    self.current = to
                     context.completeTransition(true)
                     from.viewDidDisappear(true)
                 }
                 
                 fromViews.forEach { view in
-                    PGLogger.debug("[Present Compeltion] fromView")
+                    PGLogger.debug("[Show Compeltion] fromView")
                     view.alpha     = 1.0
                     view.transform = CGAffineTransform.identity
                 }
                 
                 toViews.forEach { view in
-                    PGLogger.debug("[Present Compeltion] toView")
+                    PGLogger.debug("[Show Compeltion] toView")
                     view.alpha     = 1.0
                     view.transform = CGAffineTransform.identity
                 }
 
                 from.view.backgroundColor = fromViewBackgroundColor
-                self.presentBlock?(!canceled)
+                self.showBlock?(!canceled)
                 self.didActionStart = false
         })
     }
     
-    private func dismissAnimation(from:UIViewController, to:UIViewController, container:UIView, context: UIViewControllerContextTransitioning) {
+    private func hideAnimation(from:UIViewController, to:UIViewController, container:UIView, context: UIViewControllerContextTransitioning) {
         let fromViewBackgroundColor = from.view.backgroundColor
         from.view.backgroundColor = .clear
         container.backgroundColor = fromViewBackgroundColor
@@ -299,12 +303,12 @@ UIViewControllerAnimatedTransitioning, UIViewControllerTransitioningDelegate {
         fromViews.forEach { view in
             view.alpha     = 1.0
             view.transform = CGAffineTransform.identity
-            PGLogger.debug("[Dismiss Initialize] fromView transform : \(view.startTransform), alpha \(view.startAlpha)")
+            PGLogger.debug("[Hide Initialize] fromView transform : \(view.startTransform), alpha \(view.startAlpha)")
         }
         toViews.forEach { view in
             view.alpha     = view.endAlpha.value
             view.transform = view.endTransform.value
-            PGLogger.debug("[Dismiss Initialize] toView transform : \(view.endTransform), alpha \(view.endAlpha)")
+            PGLogger.debug("[Hide Initialize] toView transform : \(view.endTransform), alpha \(view.endAlpha)")
         }
         
         UIView.animateKeyframes(withDuration: self.transitionDuration(using: context), delay: 0, options: [], animations: {
@@ -316,7 +320,7 @@ UIViewControllerAnimatedTransitioning, UIViewControllerTransitioningDelegate {
                 UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: view.startTransform.relatedDuration, animations: {
                     view.transform = view.startTransform.value
                 })
-                PGLogger.debug("[Dismiss AnimateKeyFrame] fromView transform : \(view.startTransform), alpha \(view.startAlpha)")
+                PGLogger.debug("[Hide AnimateKeyFrame] fromView transform : \(view.startTransform), alpha \(view.startAlpha)")
             }
             
             toViews.forEach { view in
@@ -327,7 +331,7 @@ UIViewControllerAnimatedTransitioning, UIViewControllerTransitioningDelegate {
                     view.transform = CGAffineTransform.identity
                 })
                 
-                PGLogger.debug("[Dismiss AnimateKeyFrame] View transform : \(view.endTransform), alpha \(view.endAlpha)")
+                PGLogger.debug("[Hide AnimateKeyFrame] View transform : \(view.endTransform), alpha \(view.endAlpha)")
             }
             
             }, completion: { [unowned self] (_) in
@@ -337,155 +341,125 @@ UIViewControllerAnimatedTransitioning, UIViewControllerTransitioningDelegate {
                 // do finished views
                 
                 if canceled == true {
-                    self.current = self.presenting
+                    self.current = from
                     context.completeTransition(false)
                 } else {
-                    self.current = self.target
+                    self.current = to
                     context.completeTransition(true)
                     to.viewDidAppear(true)
                 }
                 
                 fromViews.forEach { view in
-                    PGLogger.debug("[Dismiss Compeltion] fromView")
+                    PGLogger.debug("[Hide Compeltion] fromView")
                     view.alpha     = 1.0
                     view.transform = CGAffineTransform.identity
                 }
                 
                 toViews.forEach { view in
-                    PGLogger.debug("[Dismiss Compeltion] toView")
+                    PGLogger.debug("[Hide Compeltion] toView")
                     view.alpha     = 1.0
                     view.transform = CGAffineTransform.identity
                 }
                 
                 from.view.backgroundColor = fromViewBackgroundColor
-                self.dismissBlock?(!canceled)
+                self.hideBlock?(!canceled)
                 self.didActionStart = false
         })
     }
     
-    private func presentOpenAction() {
-        guard let vc = self.presenting else { return }
-        guard canPresent      == true  else { return }
-        guard enablePresent   == true  else { return }
-        guard percentComplete == 0     else { return }
-        guard didActionStart  == false else { return }
-        
-        self.didActionStart = true
-
-        vc.transitioningDelegate = self
-        
-        self.target?.present(vc, animated: true, completion: nil)
-    }
-    
-    private func dismissAction() {
-        guard let vc = self.presenting else { return }
-        guard canDismiss      == true  else { return }
-        guard enableDismiss   == true  else { return }
-        guard percentComplete == 0     else { return }
-        guard didActionStart  == false else { return }
-        
-        self.didActionStart = true
-        
-        vc.dismiss(animated: true, completion: nil)
-    }
-    
     //MARK: - UIVieControllerTransitioningDelegate methods
     
-    public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    public func animationController(forShowed showed: UIViewController, showing: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return self
     }
     
-    public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    public func animationController(forHideed hideed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return self
     }
     
-    public func interactionControllerForPresentation(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+    public func interactionControllerForShowation(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
         return (self.hasInteraction == true ? self : nil)
     }
     
-    public func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+    public func interactionControllerForHideal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
         return (self.hasInteraction == true ? self : nil)
     }
     
     //MARK: - UIViewControllerAnimatedTransitioning methods
     
     public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return isPresented ? dismissDuration : presentDuration
+        return isShowed ? hideDuration : showDuration
     }
     
     public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-        
         guard let fromVc = transitionContext.viewController(forKey: .from) else { return }
         guard let toVc   = transitionContext.viewController(forKey: .to)   else { return }
         
-        if (toVc === self.presenting) {
-            self.presentAnimation(from: fromVc, to: toVc, container: transitionContext.containerView, context: transitionContext)
+        if (toVc === self.showing) {
+            self.showAnimation(from: fromVc, to: toVc, container: transitionContext.containerView, context: transitionContext)
         } else {
-            self.dismissAnimation(from: fromVc, to: toVc, container: transitionContext.containerView, context: transitionContext)
+            self.hideAnimation(from: fromVc, to: toVc, container: transitionContext.containerView, context: transitionContext)
         }
     }
     
     //MARK: - public methods
     
-    @objc public func setPresentCompletion(block:PGTransformCompleted?) { self.presentBlock = block }
-    @objc public func setDismissCompletion(block:PGTransformCompleted?) { self.dismissBlock = block }
+    @objc public func setShowCompletion(block:PGTransformCompleted?) { self.showBlock = block }
+    @objc public func setHideCompletion(block:PGTransformCompleted?) { self.hideBlock = block }
     
-    @objc public func setCanPresentBlock(block:PGTransformChecked?) { self.canPresentBlock = block }
-    @objc public func setCanDismissBlock(block:PGTransformChecked?) { self.canDismissBlock = block }
+    @objc public func setCanShowBlock(block:PGTransformChecked?) { self.canShowBlock = block }
+    @objc public func setCanHideBlock(block:PGTransformChecked?) { self.canHideBlock = block }
     
     @objc
-    public func presentTransformViewController() {
-        self.presentTransformViewController(animated: true, completion: nil)
+    public func showTransformViewController() {
+        self.showTransformViewController(animated: true, completion: nil)
     }
     
     @objc
-    public func presentTransformViewController(animated:Bool) {
-        self.presentTransformViewController(animated: animated, completion: nil)
+    public func showTransformViewController(animated:Bool) {
+        self.showTransformViewController(animated: animated, completion: nil)
+    }
+
+    @objc
+    public func hideTransformViewController() {
+        self.hideTransformViewController(animated: true, completion: nil)
     }
     
     @objc
-    public func presentTransformViewController(animated:Bool, completion:PGTransformCompleted?) {
-        guard let vc = self.presenting else { return }
-        guard canPresent      == true  else { return }
-        guard enablePresent   == true  else { return }
-        guard isPresented     == false else { return }
-        guard percentComplete == 0     else { return }
-        guard didActionStart  == false else { return }
-        
-        self.didActionStart = true
-        vc.transitioningDelegate  = self
-        self.target?.present(vc, animated: animated) { completion?(true) }
-    }
-    
-    @objc
-    public func dismissTransformViewController() {
-        self.dismissTransformViewController(animated: true, completion: nil)
-    }
-    
-    @objc
-    public func dismissTransformViewController(animated:Bool) {
-        self.dismissTransformViewController(animated: animated, completion: nil)
-    }
-    
-    @objc
-    public func dismissTransformViewController(animated:Bool, completion:PGTransformCompleted?) {
-        guard let vc = self.presenting else { return }
-        guard canDismiss      == true  else { return }
-        guard enableDismiss   == true  else { return }
-        guard isPresented     == true  else { return }
-        guard percentComplete == 0     else { return }
-        guard didActionStart  == false else { return }
-        
-        self.didActionStart      = true
-        vc.transitioningDelegate = self
-        
-        vc.dismiss(animated: animated) { completion?(true) }
+    public func hideTransformViewController(animated:Bool) {
+        self.hideTransformViewController(animated: animated, completion: nil)
     }
     
     open override func update(_ percentComplete: CGFloat) {
         guard percentComplete >= 0.00 else { return }
         guard percentComplete <= 1.00 else { return }
         super.update(percentComplete)
+    }
+}
+
+extension PGTransformTransition {
+    @objc
+    public func showOpenAction() {
+        // do override
+    }
+    
+    @objc
+    public func hideAction() {
+        // do override
+    }
+    
+    @objc
+    public func showTransformViewController(animated:Bool, completion:PGTransformCompleted?) {
+        // do override
+    }
+    
+    @objc
+    public func hideTransformViewController(animated:Bool, completion:PGTransformCompleted?) {
+        // do override
+    }
+    
+    @objc func transitionInitalized() {
+        // do override
     }
 }
 

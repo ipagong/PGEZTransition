@@ -26,7 +26,7 @@ class IntroFirstController: UIViewController {
     @IBOutlet weak var jumpButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
 
-    private var transition:PGTransformTransition!
+    private var transition:PGTransformPushTransition!
     
     private lazy var nextVc:IntroSecondController = {
         return UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "IntroSecondController") as! IntroSecondController
@@ -38,15 +38,14 @@ class IntroFirstController: UIViewController {
     }
     
     @IBAction func onNext(_ sender: Any) {
-        self.transition.presentTransformViewController()
+        self.transition.showTransformViewController()
     }
 }
 
 extension IntroFirstController {
     
     func transitionSetup() {
-     
-        self.transition = PGTransformTransition.init(target: self, presenting: self.nextVc)
+        self.transition = PGTransformPushTransition.init(target: self, showing: self.nextVc)
         
         transformView
             .setStartAlpha(0.0, start: 0.0, duration: 1.0)

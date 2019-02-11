@@ -1,15 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cFm-Td-68p">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="8tS-5p-EWV">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="e3J-4V-NoU">
+            <objects>
+                <navigationController id="8tS-5p-EWV" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ijz-Xk-urH">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="cFm-Td-68p" kind="relationship" relationship="rootViewController" id="3sb-00-xEG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U94-Fl-Vke" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="84" y="133"/>
+        </scene>
         <!--Intro First Controller-->
         <scene sceneID="lti-dr-6zU">
             <objects>
@@ -19,16 +35,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="introImg14" translatesAutoresizingMaskIntoConstraints="NO" id="iJ8-Da-F88" customClass="PGTransformImageView" customModule="PGEZTransition">
-                                <rect key="frame" x="-27.5" y="211.5" width="375" height="315"/>
+                                <rect key="frame" x="-27.5" y="233.5" width="375" height="315"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="introImg13" translatesAutoresizingMaskIntoConstraints="NO" id="ucn-8k-AOs" customClass="PGTransformImageView" customModule="PGEZTransition">
-                                <rect key="frame" x="-27.5" y="211.5" width="375" height="315"/>
+                                <rect key="frame" x="-27.5" y="233.5" width="375" height="315"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="introImg12" translatesAutoresizingMaskIntoConstraints="NO" id="uXn-pF-6mX" customClass="PGTransformImageView" customModule="PGEZTransition">
-                                <rect key="frame" x="-47.5" y="211.5" width="415" height="315"/>
+                                <rect key="frame" x="-47.5" y="233.5" width="415" height="315"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="introImg11" translatesAutoresizingMaskIntoConstraints="NO" id="iUB-jI-zLN" customClass="PGTransformImageView" customModule="PGEZTransition">
-                                <rect key="frame" x="-27.5" y="212" width="375" height="315"/>
+                                <rect key="frame" x="-27.5" y="233.5" width="375" height="315"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="29C-Qu-WaI" customClass="PGTransformView" customModule="PGEZTransition">
                                 <rect key="frame" x="0.0" y="502" width="320" height="66"/>
@@ -55,13 +71,13 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WELCOME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E6t-mx-Z2R" customClass="PGTransformLabel" customModule="PGEZTransition">
-                                <rect key="frame" x="84.5" y="80" width="152.5" height="37"/>
+                                <rect key="frame" x="84" y="101.5" width="152.5" height="37"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="31"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It's PGEZTransition" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bix-ob-GGU" customClass="PGTransformLabel" customModule="PGEZTransition">
-                                <rect key="frame" x="61.5" y="157" width="197.5" height="30"/>
+                                <rect key="frame" x="61.5" y="178.5" width="197.5" height="30"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -87,6 +103,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gHK-Wx-fMb"/>
                     </view>
+                    <navigationItem key="navigationItem" id="OH2-Mj-uvp"/>
                     <connections>
                         <outlet property="image1" destination="iUB-jI-zLN" id="yHj-i2-85v"/>
                         <outlet property="image2" destination="uXn-pF-6mX" id="51M-G9-m0f"/>
@@ -163,19 +180,19 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CustomClass" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qV6-fN-9uX" customClass="PGTransformLabel" customModule="PGEZTransition">
-                                <rect key="frame" x="86" y="131.5" width="149" height="30"/>
+                                <rect key="frame" x="85.5" y="131.5" width="149" height="30"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set up at InterfaceBuilder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Lg-NE-UBN" customClass="PGTransformLabel" customModule="PGEZTransition">
-                                <rect key="frame" x="28.5" y="171.5" width="264.5" height="30"/>
+                                <rect key="frame" x="28" y="171.5" width="264.5" height="30"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOW TO USE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TVd-p6-ZVX" customClass="PGTransformLabel" customModule="PGEZTransition">
-                                <rect key="frame" x="77" y="63.5" width="167" height="33"/>
+                                <rect key="frame" x="76.5" y="63.5" width="167" height="33"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -219,7 +236,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pcD-eq-vMa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1722" y="134"/>
+            <point key="canvasLocation" x="1708" y="133"/>
         </scene>
         <!--Intro Third Controller-->
         <scene sceneID="RUN-op-dLW">
@@ -285,7 +302,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set up Property" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m3M-g2-NcC" customClass="PGTransformLabel" customModule="PGEZTransition">
-                                <rect key="frame" x="79" y="171.5" width="163" height="30"/>
+                                <rect key="frame" x="78.5" y="171.5" width="163" height="30"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
