@@ -89,7 +89,7 @@ open class PGTransformPushTransition : PGTransformTransition, UINavigationContro
         return (self.hasInteraction == true ? self : nil)
     }
     
-    public func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    public func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
         func findTransition() -> PGTransformPushTransition? {
             switch operation {
