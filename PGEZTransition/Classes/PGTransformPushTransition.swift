@@ -26,7 +26,6 @@ open class PGTransformPushTransition : PGTransformTransition, UINavigationContro
 
         nv.delegate = self
         nv.transitioningDelegate = self
-        vc.transitioningDelegate = self
         nv.pushViewController(vc, animated: true)
     }
     
@@ -42,7 +41,6 @@ open class PGTransformPushTransition : PGTransformTransition, UINavigationContro
         
         nv.delegate = self
         nv.transitioningDelegate = self
-        vc.transitioningDelegate = self
         nv.popViewController(animated: true)
     }
     
@@ -61,14 +59,13 @@ open class PGTransformPushTransition : PGTransformTransition, UINavigationContro
         
         nv.delegate = self
         nv.transitioningDelegate = self
-        vc.transitioningDelegate = self
         nv.pushViewController(vc, animated: animated)
     }
 
     @objc
     override open func hideTransformViewController(animated:Bool, completion:PGTransformCompleted?) {
         guard let nv = self.navigation else { return }
-        guard let vc = self.showing   else { return }
+        guard let vc  = self.showing   else { return }
         guard canHide      == true     else { return }
         guard enableHide   == true     else { return }
         guard isShowed     == true     else { return }
@@ -80,7 +77,6 @@ open class PGTransformPushTransition : PGTransformTransition, UINavigationContro
         
         nv.delegate = self
         nv.transitioningDelegate = self
-        vc.transitioningDelegate = self
         nv.popViewController(animated: true)
     }
     
@@ -89,25 +85,27 @@ open class PGTransformPushTransition : PGTransformTransition, UINavigationContro
         self.target?.transitioningDelegate = self
     }
     
-    override open func transitionCompletion(_ vc: UIViewController?) {
-        guard let transition = vc?.transitioningDelegate as? PGTransformPushTransition else { return }
-        self.navigation?.delegate = transition
-        self.navigation?.transitioningDelegate = transition
-    }
-    
     public func navigationController(_ navigationController: UINavigationController, interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
         return (self.hasInteraction == true ? self : nil)
     }
     
     public func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
-        switch operation {
-        case .push:
-            return fromVC.transitioningDelegate as? PGTransformPushTransition
-        case .pop:
-            return toVC.transitioningDelegate   as? PGTransformPushTransition
-        default:
-            return nil
+        func findTransition() -> PGTransformPushTransition? {
+            switch operation {
+            case .push:
+                return fromVC.transitioningDelegate as? PGTransformPushTransition
+            case .pop:
+                return toVC.transitioningDelegate   as? PGTransformPushTransition
+            default:    return nil
+            }
         }
+        
+        guard let transition = findTransition() else { return nil }
+        
+        self.navigation?.delegate = transition
+        self.navigation?.transitioningDelegate = transition
+        
+        return transition
     }
 }
