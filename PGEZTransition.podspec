@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'PGEZTransition'
-  s.version          = '1.1.0'
+  s.version          = '1.1.1'
   s.summary          = 'Easy Transform Transition.'
   s.description      = 'You can set an animation for each "view" that works in the ViewController Transition.'
   s.homepage         = 'https://github.com/ipagong/PGEZTransition'
