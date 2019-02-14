@@ -26,8 +26,20 @@ extension PGTransformable where Self : UIView {
     }
     
     @discardableResult
+    public func setStartTransformValue(_ value:PGTransformValue) -> Self {
+        self.startTransform = value
+        return self
+    }
+    
+    @discardableResult
     public func setEndTransform(_ item:PGTransformValue.Item, start:Double, duration:Double) -> Self {
         self.endTransform = PGTransformValue(item: item, relatedStart: start, relatedDuration: duration)
+        return self
+    }
+    
+    @discardableResult
+    public func setEndTransformValue(_ value:PGTransformValue) -> Self {
+        self.endTransform = value
         return self
     }
     

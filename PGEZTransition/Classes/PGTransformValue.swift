@@ -37,6 +37,9 @@ extension PGTransformValue {
         case rateX(CGFloat)
         case rateY(CGFloat)
         case rateMove(CGFloat, CGFloat)
+        case rotate(CGFloat)
+        case scale(CGFloat, CGFloat)
+        case custom(CGAffineTransform)
         case zero
     }
 }
@@ -50,10 +53,19 @@ extension PGTransformValue.Item {
         case .rateX(let x):           return CGAffineTransform.init(translationX: PGTransformValue.Item.width(x), y: 0)
         case .rateY(let y):           return CGAffineTransform.init(translationX: 0, y: PGTransformValue.Item.height(y))
         case .rateMove(let x, let y): return CGAffineTransform.init(translationX: PGTransformValue.Item.width(x), y: PGTransformValue.Item.height(y))
+        case .rotate(let v):          return CGAffineTransform.init(rotationAngle: v)
+        case .scale(let x, let y):    return CGAffineTransform.init(scaleX: x, y: y)
+        case .custom(let value):      return value
         case .zero:                   return CGAffineTransform.identity
         }
     }
     
     public static func width(_ multiplier:CGFloat = 1.0) -> CGFloat  { return UIScreen.main.bounds.width  * multiplier }
     public static func height(_ multiplier:CGFloat = 1.0) -> CGFloat { return UIScreen.main.bounds.height * multiplier }
+}
+
+extension PGTransformValue.Item {
+    static func + (left: PGTransformValue.Item, right: PGTransformValue.Item) -> PGTransformValue.Item {
+        return .custom(left.value.concatenating(right.value))
+    }
 }
