@@ -283,6 +283,8 @@ UIViewControllerAnimatedTransitioning, UIViewControllerTransitioningDelegate {
                 from.view.backgroundColor = fromViewBackgroundColor
                 self.showBlock?(!canceled)
                 self.didActionStart = false
+                
+                self.transitionCompletion(self.current)
         })
     }
     
@@ -364,6 +366,8 @@ UIViewControllerAnimatedTransitioning, UIViewControllerTransitioningDelegate {
                 from.view.backgroundColor = fromViewBackgroundColor
                 self.hideBlock?(!canceled)
                 self.didActionStart = false
+                
+                self.transitionCompletion(self.current)
         })
     }
     
@@ -458,7 +462,13 @@ extension PGTransformTransition {
         // do override
     }
     
-    @objc func transitionInitalized() {
+    @objc
+    public func transitionInitalized() {
+        // do override
+    }
+    
+    @objc
+    public func transitionCompletion(_ vc:UIViewController?) {
         // do override
     }
 }

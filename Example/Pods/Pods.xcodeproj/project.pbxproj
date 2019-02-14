@@ -8,20 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		00C4A1FF2DA8286CB480741664D49C37 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
-		1F1F2F93137D2693343F2A3348207DCC /* PGTransformValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF88D0CD9764C71556AC2EDF2CC3CEF4 /* PGTransformValue.swift */; };
-		3E0459F2D0827B1CBE9ABB9CB155CF5F /* PGTransformItemViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387CD504E31C45AF354C6A19BE672B83 /* PGTransformItemViews.swift */; };
-		46BEE66A842C43E7ACDF48F6EC5AA761 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
+		19892D9B30F8FB703B0FA78FA697725B /* PGEZTransition-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A659F4AF7187C35F505789D64860DCA8 /* PGEZTransition-dummy.m */; };
+		40316C781309D04AA324A1D7D156DEDC /* PGTransformValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BFF09F0FAAD85325D273DA135FA214 /* PGTransformValue.swift */; };
 		472CEFF997A5963FF8F9C85BA788F091 /* Pods-PGEZTransition_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 00CE6DC14C539C6AA795B19E085A512C /* Pods-PGEZTransition_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		532221DE51FFF7493DB774A7FAE61FD0 /* Pods-PGEZTransition_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F7E4B099968C75B06EBBBAB5786B98AD /* Pods-PGEZTransition_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		64D1FB4DCF72FC6FBD5753E528AAAE88 /* PGTransformAlpha.swift in Sources */ = {isa = PBXBuildFile; fileRef = A448CA80CDE622C50760127E767AA0AC /* PGTransformAlpha.swift */; };
 		654D72E0960CF77F4D36E271000C281A /* Pods-PGEZTransition_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D5AA20363D53077C9E7105C04D25B7 /* Pods-PGEZTransition_Tests-dummy.m */; };
+		78A24F64E95FC91C758FC81E15294798 /* PGTransformPushTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA265315C09BE14DC37CFB63CCCABC38 /* PGTransformPushTransition.swift */; };
 		842979FA8EF4FF1FF96A26E72038FB57 /* Pods-PGEZTransition_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB44C88842BE5396E7D6C21F58F78D7 /* Pods-PGEZTransition_Example-dummy.m */; };
-		8D05025FB3F7EBB5E9AA5C80A3FD59F8 /* PGEZTransition-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F8FCAEA301877C2F4011F09FF09C2E6D /* PGEZTransition-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9146072822114F1000F56874 /* PGTransformPresentTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9146072722114F1000F56874 /* PGTransformPresentTransition.swift */; };
-		955536C7F5E7845BB950CF1D6C583612 /* PGTransformPushTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8490E8F63B3FE1733A60F3BC03F93F /* PGTransformPushTransition.swift */; };
+		9D9D8A35F016A2C552B72E7E81EE91EC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
 		C1AE2571D80905FC26443C485C0D7935 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
-		D090CAF3250FB7EC4D62811759FB9604 /* PGEZTransition-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C3DF272571E2A094953A90999AF58BE4 /* PGEZTransition-dummy.m */; };
-		D4EAC2439D08034021FB1F2E8A4461D5 /* PGTransformTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D954908912A83FEB44A547F703110FA6 /* PGTransformTransition.swift */; };
+		CA7EF0A2F9A46A255608AEE2AA3476E1 /* PGTransformPresentTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB5301E734C8D2D5984BBBBC4649E61 /* PGTransformPresentTransition.swift */; };
+		DBC0E4395F0C2FF1BA91BE46B3C966B0 /* PGTransformAlpha.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCDC40218A73F678F0B650F4C9C80BC /* PGTransformAlpha.swift */; };
+		E5A3EEB041014591149AD087523D0A1A /* PGTransformItemViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894834C40ABA2EC8DF403FE6A4F08046 /* PGTransformItemViews.swift */; };
+		E780F39664C83AC11B5CCF624ABB3CC7 /* PGEZTransition-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 037C4C219A7664AFB164E4AEB076C3AD /* PGEZTransition-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F100479F7D9A6EB2EDFFD362A0DF03FD /* PGTransformTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A70578A9D0ADEE782DD358851BD36B /* PGTransformTransition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,7 +29,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 47E519506354858E5744507D946D46B5;
+			remoteGlobalIDString = 38530A34B784706FEBD1E0601F4AB8E4;
 			remoteInfo = PGEZTransition;
 		};
 		E3BE1F26A60E0EEC06C17F964133D3EC /* PBXContainerItemProxy */ = {
@@ -43,42 +43,42 @@
 
 /* Begin PBXFileReference section */
 		00CE6DC14C539C6AA795B19E085A512C /* Pods-PGEZTransition_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PGEZTransition_Tests-umbrella.h"; sourceTree = "<group>"; };
+		037C4C219A7664AFB164E4AEB076C3AD /* PGEZTransition-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PGEZTransition-umbrella.h"; sourceTree = "<group>"; };
+		07A712DAEB4C61D6CA06458F7A124235 /* PGEZTransition.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PGEZTransition.xcconfig; sourceTree = "<group>"; };
 		14922C6544FEF123DFF6EE914B8E9202 /* Pods-PGEZTransition_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PGEZTransition_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		14A4EBBE08A46034037A9ED606105489 /* PGEZTransition-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PGEZTransition-prefix.pch"; sourceTree = "<group>"; };
 		1BAC3D1C59BD05ED886559EE699E858C /* Pods-PGEZTransition_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PGEZTransition_Example-frameworks.sh"; sourceTree = "<group>"; };
-		1C9A3EC63D914A4DC10F8F5435ABDA0D /* PGEZTransition.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = PGEZTransition.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		274B6C9B70C58CE8402359C3323158A5 /* Pods-PGEZTransition_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-PGEZTransition_Tests.modulemap"; sourceTree = "<group>"; };
-		28F7216CB59BE08994FB483FF00E9ECA /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		2BCDC40218A73F678F0B650F4C9C80BC /* PGTransformAlpha.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PGTransformAlpha.swift; path = PGEZTransition/Classes/PGTransformAlpha.swift; sourceTree = "<group>"; };
 		311F2EFECDB566DA03AA45EF52376524 /* Pods-PGEZTransition_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PGEZTransition_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		3285A3A3CF891D11AED9CA1D428BA9B6 /* Pods-PGEZTransition_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PGEZTransition_Example.release.xcconfig"; sourceTree = "<group>"; };
-		387CD504E31C45AF354C6A19BE672B83 /* PGTransformItemViews.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PGTransformItemViews.swift; path = PGEZTransition/Classes/PGTransformItemViews.swift; sourceTree = "<group>"; };
-		4381AB82C170F4CDE330C7896351E97C /* Pods_PGEZTransition_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PGEZTransition_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4381AB82C170F4CDE330C7896351E97C /* Pods_PGEZTransition_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PGEZTransition_Example.framework; path = "Pods-PGEZTransition_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DB44C88842BE5396E7D6C21F58F78D7 /* Pods-PGEZTransition_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PGEZTransition_Example-dummy.m"; sourceTree = "<group>"; };
-		4EB2578C62776D6780451E71E6EB2218 /* PGEZTransition-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "PGEZTransition-Info.plist"; sourceTree = "<group>"; };
 		50DFA1E03E7D554B79F1D63DEF29E8C7 /* Pods-PGEZTransition_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PGEZTransition_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		5EA6545AE271B5DA8C9D0BDB64DCF8B8 /* Pods-PGEZTransition_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PGEZTransition_Tests-Info.plist"; sourceTree = "<group>"; };
-		660A208FE9D337A3A708209992328650 /* PGEZTransition.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = PGEZTransition.modulemap; sourceTree = "<group>"; };
-		6F15A461D8597C32A18C79BD35CF6CA6 /* PGEZTransition.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PGEZTransition.xcconfig; sourceTree = "<group>"; };
 		73376B500434E68CA01B6DDE9BE6719D /* Pods-PGEZTransition_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PGEZTransition_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		73A70578A9D0ADEE782DD358851BD36B /* PGTransformTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PGTransformTransition.swift; path = PGEZTransition/Classes/PGTransformTransition.swift; sourceTree = "<group>"; };
+		768107EDBD2ED8855EDE97411CFE0BD7 /* PGEZTransition.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = PGEZTransition.modulemap; sourceTree = "<group>"; };
 		82D3B4EEFEEC801DCD8BE35ACA2DF988 /* Pods-PGEZTransition_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PGEZTransition_Example-Info.plist"; sourceTree = "<group>"; };
+		894834C40ABA2EC8DF403FE6A4F08046 /* PGTransformItemViews.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PGTransformItemViews.swift; path = PGEZTransition/Classes/PGTransformItemViews.swift; sourceTree = "<group>"; };
 		8AF747529B6B9E0DCE6CC2C2D5B59C38 /* Pods-PGEZTransition_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-PGEZTransition_Example.modulemap"; sourceTree = "<group>"; };
-		9146072722114F1000F56874 /* PGTransformPresentTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PGTransformPresentTransition.swift; path = PGEZTransition/Classes/PGTransformPresentTransition.swift; sourceTree = "<group>"; };
-		97D8CBC7D6AF2CCF1393541A0910C965 /* Pods_PGEZTransition_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PGEZTransition_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		996665F491C79DEAFC5AE307AED403F7 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A448CA80CDE622C50760127E767AA0AC /* PGTransformAlpha.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PGTransformAlpha.swift; path = PGEZTransition/Classes/PGTransformAlpha.swift; sourceTree = "<group>"; };
-		A8E93C536B40B46C6933E834E43909E2 /* PGEZTransition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PGEZTransition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		97D8CBC7D6AF2CCF1393541A0910C965 /* Pods_PGEZTransition_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PGEZTransition_Tests.framework; path = "Pods-PGEZTransition_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A659F4AF7187C35F505789D64860DCA8 /* PGEZTransition-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PGEZTransition-dummy.m"; sourceTree = "<group>"; };
+		A8E93C536B40B46C6933E834E43909E2 /* PGEZTransition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PGEZTransition.framework; path = PGEZTransition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B006D711E49DBDEAB8077073D7D91032 /* PGEZTransition-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "PGEZTransition-Info.plist"; sourceTree = "<group>"; };
+		B3B445C6FC3D36A3540DC9633C2C18F9 /* PGEZTransition.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = PGEZTransition.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		B823501D85071EE5B9AE729698967CAE /* Pods-PGEZTransition_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PGEZTransition_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		C3DF272571E2A094953A90999AF58BE4 /* PGEZTransition-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PGEZTransition-dummy.m"; sourceTree = "<group>"; };
+		C877E81EA00CE51850DCF8837887E8E7 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		C9767CEF9FCEC8A06356AD1EC752C4BC /* Pods-PGEZTransition_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PGEZTransition_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		CBB5301E734C8D2D5984BBBBC4649E61 /* PGTransformPresentTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PGTransformPresentTransition.swift; path = PGEZTransition/Classes/PGTransformPresentTransition.swift; sourceTree = "<group>"; };
 		CDD6BFC2CEEFE419B6E3912B1A66DE7C /* Pods-PGEZTransition_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PGEZTransition_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		D954908912A83FEB44A547F703110FA6 /* PGTransformTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PGTransformTransition.swift; path = PGEZTransition/Classes/PGTransformTransition.swift; sourceTree = "<group>"; };
-		DF88D0CD9764C71556AC2EDF2CC3CEF4 /* PGTransformValue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PGTransformValue.swift; path = PGEZTransition/Classes/PGTransformValue.swift; sourceTree = "<group>"; };
+		D858AD7A5B2EFB3A30C640196F36E530 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		E0BFF09F0FAAD85325D273DA135FA214 /* PGTransformValue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PGTransformValue.swift; path = PGEZTransition/Classes/PGTransformValue.swift; sourceTree = "<group>"; };
 		E7D5AA20363D53077C9E7105C04D25B7 /* Pods-PGEZTransition_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PGEZTransition_Tests-dummy.m"; sourceTree = "<group>"; };
-		F267492935277FF99F2023EBBEBDB5BA /* PGEZTransition-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PGEZTransition-prefix.pch"; sourceTree = "<group>"; };
 		F7E4B099968C75B06EBBBAB5786B98AD /* Pods-PGEZTransition_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PGEZTransition_Example-umbrella.h"; sourceTree = "<group>"; };
-		F8FCAEA301877C2F4011F09FF09C2E6D /* PGEZTransition-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PGEZTransition-umbrella.h"; sourceTree = "<group>"; };
-		FB8490E8F63B3FE1733A60F3BC03F93F /* PGTransformPushTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PGTransformPushTransition.swift; path = PGEZTransition/Classes/PGTransformPushTransition.swift; sourceTree = "<group>"; };
+		FA265315C09BE14DC37CFB63CCCABC38 /* PGTransformPushTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PGTransformPushTransition.swift; path = PGEZTransition/Classes/PGTransformPushTransition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,14 +90,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1E335B4E10BA77C11542D165375E19BA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				46BEE66A842C43E7ACDF48F6EC5AA761 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		7CEBDC86FDC4DD3959CFA26A56695E1E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -106,17 +98,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FCEE31DCF8177F4F0569510F393DAEB9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D9D8A35F016A2C552B72E7E81EE91EC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0F37E859CCD376A2D90C3972412430E7 /* Pod */ = {
+		4893C2CC73129231363D030B214A0829 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				996665F491C79DEAFC5AE307AED403F7 /* LICENSE */,
-				1C9A3EC63D914A4DC10F8F5435ABDA0D /* PGEZTransition.podspec */,
-				28F7216CB59BE08994FB483FF00E9ECA /* README.md */,
+				768107EDBD2ED8855EDE97411CFE0BD7 /* PGEZTransition.modulemap */,
+				07A712DAEB4C61D6CA06458F7A124235 /* PGEZTransition.xcconfig */,
+				A659F4AF7187C35F505789D64860DCA8 /* PGEZTransition-dummy.m */,
+				B006D711E49DBDEAB8077073D7D91032 /* PGEZTransition-Info.plist */,
+				14A4EBBE08A46034037A9ED606105489 /* PGEZTransition-prefix.pch */,
+				037C4C219A7664AFB164E4AEB076C3AD /* PGEZTransition-umbrella.h */,
 			);
-			name = Pod;
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/PGEZTransition";
 			sourceTree = "<group>";
 		};
 		62AE2B9FF609C033AD494F2A073CB36B /* Targets Support Files */ = {
@@ -126,6 +130,14 @@
 				ACCFD8308BDFB350DAA42E69E3D91C75 /* Pods-PGEZTransition_Tests */,
 			);
 			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		6B6E871BC10CEFF6535AC776E4CB78EE /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F7DDE1623BB711B0D914B9BDD68C1C51 /* PGEZTransition */,
+			);
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		85AAD2589C5F463C2389206EDF2A84B3 /* Pods-PGEZTransition_Example */ = {
@@ -153,22 +165,6 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		A24B0E6C5EF882A72B193EA4D0611F65 /* PGEZTransition */ = {
-			isa = PBXGroup;
-			children = (
-				A448CA80CDE622C50760127E767AA0AC /* PGTransformAlpha.swift */,
-				387CD504E31C45AF354C6A19BE672B83 /* PGTransformItemViews.swift */,
-				D954908912A83FEB44A547F703110FA6 /* PGTransformTransition.swift */,
-				9146072722114F1000F56874 /* PGTransformPresentTransition.swift */,
-				FB8490E8F63B3FE1733A60F3BC03F93F /* PGTransformPushTransition.swift */,
-				DF88D0CD9764C71556AC2EDF2CC3CEF4 /* PGTransformValue.swift */,
-				0F37E859CCD376A2D90C3972412430E7 /* Pod */,
-				FBDDE82542756150F58AF444C31388D0 /* Support Files */,
-			);
-			name = PGEZTransition;
-			path = ../..;
-			sourceTree = "<group>";
-		};
 		ACCFD8308BDFB350DAA42E69E3D91C75 /* Pods-PGEZTransition_Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,7 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				FB52EA48C35FD248FDC7146790E5F3D5 /* Development Pods */,
+				6B6E871BC10CEFF6535AC776E4CB78EE /* Development Pods */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
 				D1458F8EEB2E03C73996800C33355D9A /* Products */,
 				62AE2B9FF609C033AD494F2A073CB36B /* Targets Support Files */,
@@ -214,31 +210,43 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		FB52EA48C35FD248FDC7146790E5F3D5 /* Development Pods */ = {
+		E6F3A99409C9D28E93A2ED3020B91520 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				A24B0E6C5EF882A72B193EA4D0611F65 /* PGEZTransition */,
+				D858AD7A5B2EFB3A30C640196F36E530 /* LICENSE */,
+				B3B445C6FC3D36A3540DC9633C2C18F9 /* PGEZTransition.podspec */,
+				C877E81EA00CE51850DCF8837887E8E7 /* README.md */,
 			);
-			name = "Development Pods";
+			name = Pod;
 			sourceTree = "<group>";
 		};
-		FBDDE82542756150F58AF444C31388D0 /* Support Files */ = {
+		F7DDE1623BB711B0D914B9BDD68C1C51 /* PGEZTransition */ = {
 			isa = PBXGroup;
 			children = (
-				660A208FE9D337A3A708209992328650 /* PGEZTransition.modulemap */,
-				6F15A461D8597C32A18C79BD35CF6CA6 /* PGEZTransition.xcconfig */,
-				C3DF272571E2A094953A90999AF58BE4 /* PGEZTransition-dummy.m */,
-				4EB2578C62776D6780451E71E6EB2218 /* PGEZTransition-Info.plist */,
-				F267492935277FF99F2023EBBEBDB5BA /* PGEZTransition-prefix.pch */,
-				F8FCAEA301877C2F4011F09FF09C2E6D /* PGEZTransition-umbrella.h */,
+				2BCDC40218A73F678F0B650F4C9C80BC /* PGTransformAlpha.swift */,
+				894834C40ABA2EC8DF403FE6A4F08046 /* PGTransformItemViews.swift */,
+				CBB5301E734C8D2D5984BBBBC4649E61 /* PGTransformPresentTransition.swift */,
+				FA265315C09BE14DC37CFB63CCCABC38 /* PGTransformPushTransition.swift */,
+				73A70578A9D0ADEE782DD358851BD36B /* PGTransformTransition.swift */,
+				E0BFF09F0FAAD85325D273DA135FA214 /* PGTransformValue.swift */,
+				E6F3A99409C9D28E93A2ED3020B91520 /* Pod */,
+				4893C2CC73129231363D030B214A0829 /* Support Files */,
 			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/PGEZTransition";
+			name = PGEZTransition;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		948EF9E0814F52FC38F8E48B19E75D41 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E780F39664C83AC11B5CCF624ABB3CC7 /* PGEZTransition-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		95F20B6195D49F61830DF3B0988D0455 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -255,25 +263,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CC7D55FDD6FA3E0EA38C645A58D5A988 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8D05025FB3F7EBB5E9AA5C80A3FD59F8 /* PGEZTransition-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		47E519506354858E5744507D946D46B5 /* PGEZTransition */ = {
+		38530A34B784706FEBD1E0601F4AB8E4 /* PGEZTransition */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9DD69D436AA816B04E7822E0EB7FFA46 /* Build configuration list for PBXNativeTarget "PGEZTransition" */;
+			buildConfigurationList = 1A0C9560362648A6BD3A463100AECD19 /* Build configuration list for PBXNativeTarget "PGEZTransition" */;
 			buildPhases = (
-				CC7D55FDD6FA3E0EA38C645A58D5A988 /* Headers */,
-				572DD2C67FE9F227DFEF17B6CF3789F9 /* Sources */,
-				1E335B4E10BA77C11542D165375E19BA /* Frameworks */,
-				72E83E8F54BCD937C6D657EAC9F7AD17 /* Resources */,
+				948EF9E0814F52FC38F8E48B19E75D41 /* Headers */,
+				E55F3F529A4BDA95C3E24A7A62F01D41 /* Sources */,
+				FCEE31DCF8177F4F0569510F393DAEB9 /* Frameworks */,
+				04A27FC7B1E8FE60AB3D13E1E828A4BD /* Resources */,
 			);
 			buildRules = (
 			);
@@ -343,7 +343,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				47E519506354858E5744507D946D46B5 /* PGEZTransition */,
+				38530A34B784706FEBD1E0601F4AB8E4 /* PGEZTransition */,
 				73AC4B7D9ADA35E8B051E79EFB2F950B /* Pods-PGEZTransition_Example */,
 				878B7FB14B922E4C9FC9C1A6F837876A /* Pods-PGEZTransition_Tests */,
 			);
@@ -351,14 +351,14 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		0567E856F5193404805EAC36D7F47061 /* Resources */ = {
+		04A27FC7B1E8FE60AB3D13E1E828A4BD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		72E83E8F54BCD937C6D657EAC9F7AD17 /* Resources */ = {
+		0567E856F5193404805EAC36D7F47061 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -383,17 +383,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		572DD2C67FE9F227DFEF17B6CF3789F9 /* Sources */ = {
+		E55F3F529A4BDA95C3E24A7A62F01D41 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D090CAF3250FB7EC4D62811759FB9604 /* PGEZTransition-dummy.m in Sources */,
-				955536C7F5E7845BB950CF1D6C583612 /* PGTransformPushTransition.swift in Sources */,
-				64D1FB4DCF72FC6FBD5753E528AAAE88 /* PGTransformAlpha.swift in Sources */,
-				3E0459F2D0827B1CBE9ABB9CB155CF5F /* PGTransformItemViews.swift in Sources */,
-				D4EAC2439D08034021FB1F2E8A4461D5 /* PGTransformTransition.swift in Sources */,
-				9146072822114F1000F56874 /* PGTransformPresentTransition.swift in Sources */,
-				1F1F2F93137D2693343F2A3348207DCC /* PGTransformValue.swift in Sources */,
+				19892D9B30F8FB703B0FA78FA697725B /* PGEZTransition-dummy.m in Sources */,
+				DBC0E4395F0C2FF1BA91BE46B3C966B0 /* PGTransformAlpha.swift in Sources */,
+				E5A3EEB041014591149AD087523D0A1A /* PGTransformItemViews.swift in Sources */,
+				CA7EF0A2F9A46A255608AEE2AA3476E1 /* PGTransformPresentTransition.swift in Sources */,
+				78A24F64E95FC91C758FC81E15294798 /* PGTransformPushTransition.swift in Sources */,
+				F100479F7D9A6EB2EDFFD362A0DF03FD /* PGTransformTransition.swift in Sources */,
+				40316C781309D04AA324A1D7D156DEDC /* PGTransformValue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,7 +417,7 @@
 		F4150495D2D411A8C008BDD38FCADE9B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = PGEZTransition;
-			target = 47E519506354858E5744507D946D46B5 /* PGEZTransition */;
+			target = 38530A34B784706FEBD1E0601F4AB8E4 /* PGEZTransition */;
 			targetProxy = 54BCE274286DBA164F7C8753596C4CAE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -456,9 +456,9 @@
 			};
 			name = Debug;
 		};
-		561FCCAC1A8C814D214CDF861827B7B7 /* Debug */ = {
+		4553680A7C6E2FF223C7BE48522AE3B7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6F15A461D8597C32A18C79BD35CF6CA6 /* PGEZTransition.xcconfig */;
+			baseConfigurationReference = 07A712DAEB4C61D6CA06458F7A124235 /* PGEZTransition.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -482,10 +482,11 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		A84034DBCC3DF0192F4B933D22E36939 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -705,15 +706,16 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 4.2;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
 		};
-		F83A42C73FC58A592B9A465757D4E099 /* Release */ = {
+		F4C37852B91BEB813D34CCA625A64DE1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6F15A461D8597C32A18C79BD35CF6CA6 /* PGEZTransition.xcconfig */;
+			baseConfigurationReference = 07A712DAEB4C61D6CA06458F7A124235 /* PGEZTransition.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -737,15 +739,23 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1A0C9560362648A6BD3A463100AECD19 /* Build configuration list for PBXNativeTarget "PGEZTransition" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4C37852B91BEB813D34CCA625A64DE1 /* Debug */,
+				4553680A7C6E2FF223C7BE48522AE3B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -760,15 +770,6 @@
 			buildConfigurations = (
 				EE44F701F76F640D9869C9E1116E5EE0 /* Debug */,
 				BCD15C929147304BB2127A624268585A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		9DD69D436AA816B04E7822E0EB7FFA46 /* Build configuration list for PBXNativeTarget "PGEZTransition" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				561FCCAC1A8C814D214CDF861827B7B7 /* Debug */,
-				F83A42C73FC58A592B9A465757D4E099 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

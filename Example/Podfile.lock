@@ -1,5 +1,5 @@
 PODS:
-  - PGEZTransition (0.1.0)
+  - PGEZTransition (1.1.0)
 
 DEPENDENCIES:
   - PGEZTransition (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  PGEZTransition: fb320456e2221b09ea233906e13d18c6f8803209
+  PGEZTransition: facb0d9fa405b37d46b15471ba7bca1d8d7bfef6
 
 PODFILE CHECKSUM: 99f61ea5786e9ff27bcb103431d5369b028a3284
 

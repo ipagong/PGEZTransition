@@ -1,6 +1,6 @@
 {
   "name": "PGEZTransition",
-  "version": "0.1.0",
+  "version": "1.1.0",
   "summary": "Easy Transform Transition.",
   "description": "You can set an animation for each \"view\" that works in the ViewController Transition.",
   "homepage": "https://github.com/ipagong/PGEZTransition",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/ipagong/PGEZTransition.git",
-    "tag": "0.1.0"
+    "tag": "1.1.1"
   },
   "platforms": {
     "ios": "8.0"

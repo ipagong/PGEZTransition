@@ -65,7 +65,7 @@ extension PGTransformValue.Item {
 }
 
 extension PGTransformValue.Item {
-    static func + (left: PGTransformValue.Item, right: PGTransformValue.Item) -> PGTransformValue.Item {
+    public static func + (left: PGTransformValue.Item, right: PGTransformValue.Item) -> PGTransformValue.Item {
         return .custom(left.value.concatenating(right.value))
     }
 }
